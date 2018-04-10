@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id='app'>
+      <my-component1></my-component1>
+    </div>
+    <div id= 'app1'>
+      <my-component1></my-component1>
+      <my-component2></my-component2>
+      <my-component3></my-component3>
+    </div>
+  </body>
+  <script>
+    Vue.component('my-component1', {
+      template: '<div>This is the first component!</div>'
+    })
+    var vm1 = new Vue({
+      el: '#app'
+    })
+    var vm2 = new Vue({
+      el: '#app1',
+      components: {
+        'my-component2': {
+          template: '<div>This is the second component!</div>'
+        },
+        'my-component3': {
+          template: '<div>This is the third component!</div>'
+        }
+      }
+    })
+  </script>
+</html>
